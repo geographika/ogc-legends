@@ -6,7 +6,7 @@ import os
 from collections import defaultdict
 
 
-__version__ = "0.1.1"
+__version__ = "0.1.2"
 log = logging.getLogger("ogc-legends")
 
 
@@ -48,6 +48,7 @@ def get_legends(url, output_folder, regenerate_images=True, version="1.3.0"):
         with a list of styles and generated filenames as values
 
     """
+
     wms = WebMapService(url, version=version)
     legends = defaultdict(list)
 
@@ -66,7 +67,7 @@ def get_legends(url, output_folder, regenerate_images=True, version="1.3.0"):
             print(output_fn)
             image_fn = os.path.join(output_folder, output_fn)
 
-            if regenerate_images is False or not os.path.exists(image_fn):
+            if regenerate_images is True or not os.path.exists(image_fn):
                 url = props["legend"]
                 make_legend_request(url, image_fn)
 
