@@ -57,7 +57,7 @@ Other options - don't override if file already exists, and use WMS version 1.1.1
 Requirements
 ------------
 
-* Python 2.7 or Python 3.x
+* Python 3.6+
 
 Installation
 ------------
