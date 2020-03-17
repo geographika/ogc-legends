@@ -6,7 +6,7 @@ import os
 from collections import defaultdict
 
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 log = logging.getLogger("ogc-legends")
 
 
