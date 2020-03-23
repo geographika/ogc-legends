@@ -6,7 +6,7 @@ import os
 from collections import defaultdict
 
 
-__version__ = "0.1.2"
+__version__ = "0.1.3"
 log = logging.getLogger("ogc-legends")
 
 
@@ -76,11 +76,15 @@ def get_legends(url, output_folder, regenerate_images=True, version="1.3.0"):
     return legends
 
 
-if __name__ == "__main__":
+def main():
     url = sys.argv[1]
-    output_folder = sys.argv[2]
 
-    if len(sys.argv) == 4:
+    if len(sys.argv) >= 3:
+        output_folder = sys.argv[2]
+    else:
+        output_folder = "."
+
+    if len(sys.argv) >= 4:
         regenerate_images = bool(sys.argv[3])
     else:
         regenerate_images = True
@@ -91,3 +95,7 @@ if __name__ == "__main__":
         version = "1.3.0"
 
     get_legends(url, output_folder, regenerate_images, version)
+
+
+if __name__ == "__main__":
+    main()

@@ -29,5 +29,11 @@ setup(name='ogc-legends',
       author_email='sethg@geographika.co.uk',
       license='MIT',
       py_modules=['ogc_legends'],
+      entry_points={
+          'console_scripts': [
+              # console_program_name=module:callable_func - not __main__
+              'ogc_legends=ogc_legends:main',
+          ],
+      },
       install_requires=['owslib'],
       zip_safe=False)

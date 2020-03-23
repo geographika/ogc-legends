@@ -46,13 +46,19 @@ From the command line:
 
 .. code-block:: console
 
-    python ogc_legends.py "https://demo.mapserver.org/cgi-bin/wms?" "./images"
+    ogc_legends "https://demo.mapserver.org/cgi-bin/wms?"
+
+To save to a different folder:
+
+.. code-block:: console
+
+    ogc_legends "https://demo.mapserver.org/cgi-bin/wms?" "./images"
 
 Other options - don't override if file already exists, and use WMS version 1.1.1:
 
 .. code-block:: console
 
-    python ogc_legends.py "https://demo.mapserver.org/cgi-bin/wms?" "./images" False "1.1.1"
+    ogc_legends "https://demo.mapserver.org/cgi-bin/wms?" "./images" False "1.1.1"
 
 Requirements
 ------------
